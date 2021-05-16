@@ -1,5 +1,6 @@
-import { shallow } from 'enzyme';
+import { render, shallow } from 'enzyme';
 import Header from '.';
+import { REQUEST_TOKEN } from '../../../constants';
 import HeaderPage from './page';
 
 describe('Header', () => {

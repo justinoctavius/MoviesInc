@@ -4,8 +4,8 @@ import HeaderPage from './page';
 const Header = () => {
   const { state, validatePermissions } = useSignIn();
 
-  const signInHandler = () => {
-    validatePermissions();
+  const signInHandler = async () => {
+    await validatePermissions();
   };
   return <HeaderPage dataTest="HeaderPage" signInHandler={signInHandler} />;
 };

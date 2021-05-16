@@ -16,7 +16,7 @@ const HeaderPage = ({ signInHandler }) => {
             justify-content: space-between;
             align-items: center;
             color: ${theme.colors.secondary};
-            padding: ${theme.paddings.p1};
+            padding: ${theme.paddings.p2};
             position: sticky;
             border-bottom: 1px solid ${theme.colors.secondary};
           }

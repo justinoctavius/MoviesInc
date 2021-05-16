@@ -6,13 +6,13 @@ export const colors = {
 };
 
 export const paddings = {
-  p1: '1em',
-  p2: '2em',
+  p1: '.5em',
+  p2: '1em',
 };
 
 export const margins = {
-  m1: '1em',
-  m2: '2em',
+  m1: '.5em',
+  m2: '1em',
 };
 
 export const sizes = {
@@ -25,4 +25,10 @@ export const fonts = {
   logo: 'Joti one',
   small: 'Roboto',
   title: 'Roboto',
+};
+
+export const screens = {
+  s1: '1440px',
+  s2: '1024px',
+  s3: '768px',
 };
