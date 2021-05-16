@@ -12,7 +12,8 @@ const MainMoviesListPage = ({ movies, title }) => {
           </Title>
         </div>
         <div className="list_cards">
-          {movies && movies.map((movie) => <MainCard movie={movie} />)}
+          {movies &&
+            movies.map((movie) => <MainCard movie={movie} key={movie.id} />)}
         </div>
       </div>
       <style jsx>

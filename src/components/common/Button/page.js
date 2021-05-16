@@ -1,6 +1,6 @@
 import { theme } from '../../../constants';
 
-const ButtonPage = ({ text, onClick }) => {
+const ButtonPage = ({ text, onClick, color }) => {
   return (
     <>
       <div onClick={onClick} className="button">
@@ -21,6 +21,7 @@ const ButtonPage = ({ text, onClick }) => {
             color: ${theme.colors.third};
           }
           .button_text {
+            text-align: center;
             font-size: ${theme.sizes.small};
             margin: 0;
           }

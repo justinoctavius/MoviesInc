@@ -1,7 +1,7 @@
 import movieApi from '.';
 
 describe('Movie api', () => {
-  describe('NowPlaying api', () => {
+  describe('getNowPlaying api', () => {
     it('Should return success in the now playing movies response msg', async () => {
       const expected = 'success';
       const result = (await movieApi.getNowPlaying()).msg;
@@ -10,24 +10,24 @@ describe('Movie api', () => {
     });
   });
 
-  describe('Similar api', () => {
-    it('Should return success in the similar movies response msg, passed an id', async () => {
+  describe('getSimilar api', () => {
+    it('Should return a success msg when getSimilar is invoked, passed an id', async () => {
       const expected = 'success';
-      const result = (await movieApi.similar(2)).msg;
+      const result = (await movieApi.getSimilar(2)).msg;
 
       expect(result).toBe(expected);
     });
 
     it(`Should return "The resource you requested could not be found." in similar movies response msg, not passed an id `, async () => {
       const expected = 'The resource you requested could not be found.';
-      const result = (await movieApi.similar()).msg;
+      const result = (await movieApi.getSimilar()).msg;
 
       expect(result).toBe(expected);
     });
   });
 
-  describe('Details api', () => {
-    it(`Should return success the movie details msg, passed an id`, async () => {
+  describe('getDetails api', () => {
+    it(`Should returna success msg when getDetails is invoked, passed an id`, async () => {
       const expected = 'success';
       const result = (await movieApi.getDetails(2)).msg;
 
@@ -39,6 +39,15 @@ describe('Movie api', () => {
       const result = (await movieApi.getDetails()).msg;
 
       expect(result).not.toBe(expected);
+    });
+  });
+
+  describe('getCredits', () => {
+    it('Should return a success msg when getCredits is invoked, passed an in', async () => {
+      const expected = 'success';
+      const result = (await movieApi.getCredits(2)).msg;
+
+      expect(result).toBe(expected);
     });
   });
 });

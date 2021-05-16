@@ -33,10 +33,10 @@ movieApi.getDetails = async (id, lang = 'en-US') => {
   }
 };
 
-movieApi.rate = async (id, value, session_id) => {
+movieApi.rate = async (id, value) => {
   try {
     const data = await axios.post(
-      `${envs.API}/${id}/rating?api_key=${envs.API_KEY}&session_id=${session_id}`,
+      `${envs.API}/${id}/rating?api_key=${envs.API_KEY}`,
       { value }
     );
     return { success: true, msg: 'success' };
@@ -48,10 +48,25 @@ movieApi.rate = async (id, value, session_id) => {
   }
 };
 
-movieApi.similar = async (id, lang = 'en-US') => {
+movieApi.getSimilar = async (id, lang = 'en-US') => {
   try {
     const data = await axios.get(
       `${envs.API}/${id}/similar?api_key=${envs.API_KEY}&language=${lang}`
+    );
+    return { payload: data.data, success: true, msg: 'success' };
+  } catch (error) {
+    return {
+      payload: null,
+      success: false,
+      msg: error?.response?.data?.status_message,
+    };
+  }
+};
+
+movieApi.getCredits = async (id, lang) => {
+  try {
+    const data = await axios.get(
+      `${envs.API}/${id}/credits?api_key=${envs.API_KEY}&language=${lang}`
     );
     return { payload: data.data, success: true, msg: 'success' };
   } catch (error) {
