@@ -11,7 +11,6 @@ import Image from './Image';
 
 export {
   MainMoviesList,
-  MoviesList,
   Header,
   Logo,
   Button,
@@ -20,4 +19,5 @@ export {
   Votes,
   Actors,
   Image,
+  MoviesList,
 };

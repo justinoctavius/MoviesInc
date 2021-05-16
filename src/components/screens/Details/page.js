@@ -1,7 +1,8 @@
 import { theme } from '../../../constants';
-import { Actors, Button, Image, Title } from '../../common';
+import { Actors, Button, Image, MoviesList, Title } from '../../common';
+import Rate from '../../common/Rate';
 
-const DetailsScreenPage = ({ movie, actors }) => {
+const DetailsScreenPage = ({ movie, similar, actors }) => {
   return (
     <>
       <div className="container">
@@ -16,20 +17,19 @@ const DetailsScreenPage = ({ movie, actors }) => {
             <div className="details_footer">
               <div className="details_action">
                 <Button text={'Add to favorite'} />
-                <br />
-                <Title>Rate</Title>
+                <Rate initialRate={movie.vote_average} id={movie.id} />
               </div>
-              <Actors actors={actors} />
+              <div className="details_actors">
+                <Actors actors={actors} />
+              </div>
             </div>
           </div>
         </div>
-        <div>hola</div>
+        <MoviesList movies={similar} title="Similar" />
       </div>
       <style jsx>
         {`
           .container {
-            height: 100vh;
-            overflow: hidden;
             display: grid;
             grid-template-rows: 80% 20%;
             margin: ${theme.margins.m1} 0;
@@ -50,26 +50,58 @@ const DetailsScreenPage = ({ movie, actors }) => {
             position: relative;
           }
           .details_body {
-            height: 90%;
             padding: ${theme.paddings.p2};
             display: grid;
-            grid-template-rows: 2em 1fr 10em;
+            grid-template-rows: min-content 1fr min-content;
           }
           .details_title > small {
             position: absolute;
             top: 0px;
             right: 0px;
-            text-align: right;
           }
           .details_action {
             padding: ${theme.paddings.p2};
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+          .details_actors {
+            max-height: 10em;
+            overflow-y: scroll;
           }
           .details_description {
             font-size: ${theme.sizes.title};
             padding: ${theme.paddings.p1};
-            overflow: scroll;
+            overflow-y: scroll;
             text-align: center;
           }
+          @media (min-width: ${theme.screens.s2}) {
+            .container {
+              grid-template-rows: min-content min-content;
+            }
+            .details_container {
+              grid-template-columns: 1fr 2fr;
+              grid-template-rows: 1fr;
+            }
+            .details_body {
+              grid-template-rows: 5em 1fr;
+              grid-template-columns: 1fr 1fr;
+            }
+            .details_title {
+              grid-column: 1 / span 2;
+              grid-row: 1/1;
+            }
+            .details_actors {
+              min-height: 20em;
+              max-height: min-height;
+            }
+            .details_footer {
+              grid-row: 2;
+              grid-column: 2;
+              grid-template-columns: 1fr;
+              grid-template-rows: min-content 1fr;
+            }
+          } ;
         `}
       </style>
     </>

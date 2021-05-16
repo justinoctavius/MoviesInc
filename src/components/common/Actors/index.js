@@ -24,10 +24,6 @@ const Actors = ({ actors }) => {
         .title {
           padding: ${theme.paddings.p1};
         }
-        .actors {
-          max-height: 9em;
-          overflow: scroll;
-        }
         .actors ul {
           margin: 0 1em;
           list-style: square;

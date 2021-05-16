@@ -1,13 +1,23 @@
-import { useContext, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useMovie } from '../../hooks';
 import RatePage from './page';
 
-const Rate = ({ initialRate }) => {
-  const [rate, setRate] = useState(initialRate);
-  // const {rateState, rateAction} = useContext()
+const Rate = ({ id, initialRate }) => {
+  const [rateState, setRateState] = useState(initialRate);
+  const { movieState, rate } = useMovie();
+
   const submitRateHandler = (r) => {
-    setRate(rate);
+    setRateState(r);
+    rate(id, r);
   };
-  return <RatePage rate={rate} setRate={submitRateHandler} />;
+
+  return (
+    <RatePage
+      rate={rateState}
+      setRate={submitRateHandler}
+      dataTest="RatePage"
+    />
+  );
 };
 
 export default Rate;

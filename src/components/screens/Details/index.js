@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import DetailsScreenPage from './page';
 
-const DetailsScreen = ({ data, credits }) => {
+const DetailsScreen = ({ data, credits, similar }) => {
   const [actors, setActors] = useState([]);
 
   const getActors = async () => {
@@ -22,6 +22,7 @@ const DetailsScreen = ({ data, credits }) => {
     <DetailsScreenPage
       movie={data.payload}
       actors={actors}
+      similar={similar?.results}
       dataTest="DetailsScreenPage"
     />
   );

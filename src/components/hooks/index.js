@@ -1,3 +1,4 @@
 import useSignIn from './useSignIn';
+import useMovie from './useMovie';
 
-export { useSignIn };
+export { useSignIn, useMovie };

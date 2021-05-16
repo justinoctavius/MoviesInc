@@ -11,6 +11,7 @@ const Image = ({ vote, src }) => {
       <style jsx>
         {`
           .image {
+            height: 100%;
             text-align: center;
             background: #000;
             overflow: hidden;
