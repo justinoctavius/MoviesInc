@@ -10,4 +10,22 @@ describe('Header', () => {
 
     expect(result).toBe(expected);
   });
+
+  describe('HeaderPage', () => {
+    it(`Should render a Logo`, () => {
+      const wrapper = shallow(<HeaderPage />);
+      const expected = true;
+      const result = wrapper.find({ dataTest: 'Logo' }).exists();
+
+      expect(result).toBe(expected);
+    });
+
+    it(`Should render a Sign-in button`, () => {
+      const wrapper = shallow(<HeaderPage />);
+      const expected = true;
+      const result = wrapper.find({ dataTest: 'SignIn' }).exists();
+
+      expect(result).toBe(expected);
+    });
+  });
 });

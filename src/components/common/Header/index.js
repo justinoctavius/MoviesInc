@@ -1,7 +1,8 @@
 import HeaderPage from './page';
 
 const Header = () => {
-  return <HeaderPage dataTest="HeaderPage" />;
+  const signInHandler = () => {};
+  return <HeaderPage dataTest="HeaderPage" signInHandler={signInHandler} />;
 };
 
 export default Header;
