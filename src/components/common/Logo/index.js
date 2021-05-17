@@ -1,11 +1,17 @@
 import { theme } from '../../../constants';
+import Link from 'next/link';
 
 const Logo = () => {
   return (
     <>
-      <strong>Movies-Inc</strong>
+      <Link href="/">
+        <a>
+          <strong>Movies-Inc</strong>
+        </a>
+      </Link>
       <style jsx>{`
-        strong {
+        a {
+          color: ${theme.colors.secondary};
           font-size: ${theme.sizes.logo};
           font-family: '${theme.fonts.logo}';
         }

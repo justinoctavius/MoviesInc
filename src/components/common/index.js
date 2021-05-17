@@ -1,4 +1,3 @@
-import MainMoviesList from './MainMoviesList';
 import MoviesList from './MoviesList';
 import Header from './Header';
 import Logo from './Logo';
@@ -10,7 +9,6 @@ import Actors from './Actors';
 import Image from './Image';
 
 export {
-  MainMoviesList,
   Header,
   Logo,
   Button,

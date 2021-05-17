@@ -1,6 +1,6 @@
-import Layout from '../components/layouts';
-import { DetailsScreen } from '../components/screens';
-import { movieApi } from './../api';
+import Layout from '../../components/layouts';
+import { DetailsScreen } from '../../components/screens';
+import { movieApi } from '../../api';
 
 const Details = ({ data, credits, similar }) => {
   return (

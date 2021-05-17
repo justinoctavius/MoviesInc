@@ -1,7 +1,7 @@
 import { FAIL_QUERY, REQUEST_QUERY, SUCCESS_QUERY } from '../../constants';
 
 const reducer = (state = {}, action) => {
-  switch (action) {
+  switch (action.type) {
     case REQUEST_QUERY:
       return { loading: true, payload: null, error: null };
     case SUCCESS_QUERY:

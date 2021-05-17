@@ -15,7 +15,7 @@ const useSignIn = () => {
 
     sessionStorage.setItem(REQUEST_TOKEN, request_token);
     window.location.replace(
-      `https://www.themoviedb.org/authenticate/${request_token}?redirect_to=${window.location}/signin`
+      `https://www.themoviedb.org/authenticate/${request_token}?redirect_to=http://${window.location.host}/signin`
     );
   };
 

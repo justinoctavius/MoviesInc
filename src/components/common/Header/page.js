@@ -2,12 +2,16 @@ import Button from '../Button';
 import Logo from '../Logo';
 import { theme } from './../../../constants';
 
-const HeaderPage = ({ signInHandler }) => {
+const HeaderPage = ({ signInHandler, logoutHandler, isSignIn }) => {
   return (
     <>
       <div className="header">
         <Logo dataTest="Logo" />
-        <Button text="Sign-in" onClick={signInHandler} dataTest="SignIn" />
+        <Button
+          text={isSignIn ? 'Logout' : 'Sign-in'}
+          onClick={isSignIn ? logoutHandler : signInHandler}
+          dataTest="SignIn"
+        />
       </div>
       <style jsx>
         {`

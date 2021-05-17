@@ -1,14 +1,12 @@
 import { Header } from '../common';
-import { LanguageProviderWrapper, MovieProviderWrapper } from '../providers';
+import MovieProviderWrapper from '../providers';
 
 const Layout = ({ children }) => {
   return (
-    <LanguageProviderWrapper>
-      <MovieProviderWrapper>
-        <Header />
-        <div>{children}</div>
-      </MovieProviderWrapper>
-    </LanguageProviderWrapper>
+    <MovieProviderWrapper>
+      <Header />
+      <div>{children}</div>
+    </MovieProviderWrapper>
   );
 };
 

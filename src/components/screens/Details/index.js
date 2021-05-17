@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useMovie } from '../../hooks';
 import DetailsScreenPage from './page';
 
 const DetailsScreen = ({ data, credits, similar }) => {
   const [actors, setActors] = useState([]);
+  const { favoritesState, addFavorite } = useMovie();
 
   const getActors = async () => {
     const actorsArr = await credits?.cast?.map((credit) => {
@@ -11,7 +13,10 @@ const DetailsScreen = ({ data, credits, similar }) => {
       }
     });
     setActors(actorsArr);
-    console.log(actors);
+  };
+
+  const addFavoriteHandler = async () => {
+    addFavorite(data?.payload?.id);
   };
 
   useEffect(() => {
@@ -24,6 +29,7 @@ const DetailsScreen = ({ data, credits, similar }) => {
       actors={actors}
       similar={similar?.results}
       dataTest="DetailsScreenPage"
+      addFavoriteHandler={addFavoriteHandler}
     />
   );
 };

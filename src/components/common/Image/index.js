@@ -5,7 +5,7 @@ const Image = ({ vote, src }) => {
   return (
     <>
       <div className="image">
-        <Votes vote={vote} />
+        {vote && <Votes vote={vote} />}
         <img src={`${envs.IMAGE_API}/${src}`} />
       </div>
       <style jsx>

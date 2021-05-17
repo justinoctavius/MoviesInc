@@ -1,14 +1,16 @@
 import { MainMoviesList, MoviesList } from '../../common';
 
 const HomeScreenPage = ({ nowPlaying, favorites }) => {
+  console.log(favorites);
   return (
     <div>
-      <MainMoviesList
+      <MoviesList
         movies={nowPlaying}
         title="Now playing"
         dataTest="MainMoviesList"
+        main
       />
-      <MoviesList movies={favorites} dataTest="MoviesList" />
+      <MoviesList movies={favorites} dataTest="MoviesList" title="Favorites" />
     </div>
   );
 };

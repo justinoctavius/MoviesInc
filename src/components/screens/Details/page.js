@@ -2,7 +2,7 @@ import { theme } from '../../../constants';
 import { Actors, Button, Image, MoviesList, Title } from '../../common';
 import Rate from '../../common/Rate';
 
-const DetailsScreenPage = ({ movie, similar, actors }) => {
+const DetailsScreenPage = ({ movie, similar, actors, addFavoriteHandler }) => {
   return (
     <>
       <div className="container">
@@ -16,7 +16,7 @@ const DetailsScreenPage = ({ movie, similar, actors }) => {
             <p className="details_description">{movie.overview}</p>
             <div className="details_footer">
               <div className="details_action">
-                <Button text={'Add to favorite'} />
+                <Button text={'Add to favorite'} onClick={addFavoriteHandler} />
                 <Rate initialRate={movie.vote_average} id={movie.id} />
               </div>
               <div className="details_actors">
@@ -77,6 +77,7 @@ const DetailsScreenPage = ({ movie, similar, actors }) => {
           }
           @media (min-width: ${theme.screens.s2}) {
             .container {
+              height: 50vh;
               grid-template-rows: min-content min-content;
             }
             .details_container {

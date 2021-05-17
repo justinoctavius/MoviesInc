@@ -4,7 +4,7 @@ import MainCardPage from './page';
 const MainCard = ({ movie }) => {
   const router = useRouter();
   const onClickHandler = () => {
-    router.push(`/${movie.id}`);
+    router.push(`/details/${movie.id}`);
   };
 
   return (
