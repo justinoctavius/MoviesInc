@@ -1,5 +1,5 @@
 import { theme } from '../../../constants';
-import { Actors, Button, Image, MoviesList, Title } from '../../common';
+import { Actors, Block, Button, Image, MoviesList, Title } from '../../common';
 import Rate from '../../common/Rate';
 
 const DetailsScreenPage = ({ movie, similar, actors, addFavoriteHandler }) => {
@@ -15,10 +15,17 @@ const DetailsScreenPage = ({ movie, similar, actors, addFavoriteHandler }) => {
             </div>
             <p className="details_description">{movie.overview}</p>
             <div className="details_footer">
-              <div className="details_action">
+              <Block
+                p2
+                flex
+                column
+                middle
+                spaceBetween
+                s2={`flex-direction: row; align-items: center;`}
+              >
                 <Button text={'Add to favorite'} onClick={addFavoriteHandler} />
                 <Rate initialRate={movie.vote_average} id={movie.id} />
-              </div>
+              </Block>
               <div className="details_actors">
                 <Actors actors={actors} />
               </div>
@@ -58,12 +65,6 @@ const DetailsScreenPage = ({ movie, similar, actors, addFavoriteHandler }) => {
             position: absolute;
             top: 0px;
             right: 0px;
-          }
-          .details_action {
-            padding: ${theme.paddings.p2};
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
           }
           .details_actors {
             max-height: 10em;

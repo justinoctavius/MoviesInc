@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { theme } from '../../../constants';
-import { Title } from '../../common';
+import { Block, Title } from '../../common';
 import { useSignIn } from '../../hooks';
 
 const SignInScreen = () => {
@@ -31,8 +31,18 @@ const SignInScreen = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="card">
+      <Block height="100vh" width="100%" flex center middle>
+        <Block
+          height="20vh"
+          width="30em"
+          bg="secondary"
+          br1
+          p2
+          flex
+          column
+          spaceBetween
+          middle
+        >
           <Title logo third>
             Login
           </Title>
@@ -40,28 +50,10 @@ const SignInScreen = () => {
             {state.msg}
           </p>
           <p>Redirecting in {counter} seconds...</p>
-        </div>
-      </div>
+        </Block>
+      </Block>
       <style jsx>
         {`
-          .container {
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .card {
-            height: 20vh;
-            width: 30em;
-            background-color: ${theme.colors.secondary};
-            border-radius: 1em;
-            padding: ${theme.paddings.p2};
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-          }
           p {
             font-size: ${theme.sizes.title};
             font-weight: bold;

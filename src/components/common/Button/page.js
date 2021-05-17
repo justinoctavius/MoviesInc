@@ -1,29 +1,33 @@
 import { theme } from '../../../constants';
+import Block from '../Block';
 
-const ButtonPage = ({ text, onClick, color }) => {
+const ButtonPage = ({ text, onClick }) => {
+  const hover = `background-color: ${theme.colors.secondary};
+  color: ${theme.colors.third};`;
   return (
     <>
-      <div onClick={onClick} className="button">
-        <p className="button_text">{text}</p>
-      </div>
+      <Block
+        p1
+        border
+        bg="third"
+        pointer
+        width="max-content"
+        height="min-content"
+        onClick={onClick}
+        className="button"
+        transition="0.3s"
+        hover={hover}
+        active={hover}
+      >
+        <strong className="button_text">{text}</strong>
+      </Block>
       <style jsx>
         {`
-          .button {
-            padding: ${theme.paddings.p1};
-            border: ${theme.colors.secondary} 1px solid;
-            background-color: ${theme.colors.third};
-            cursor: pointer;
-            transition: 0.3s;
-          }
-          .button:hover,
-          .button:active {
-            background-color: ${theme.colors.secondary};
-            color: ${theme.colors.third};
-          }
           .button_text {
-            text-align: center;
             font-size: ${theme.sizes.small};
-            margin: 0;
+          }
+          div:hover,
+          div:active {
           }
         `}
       </style>

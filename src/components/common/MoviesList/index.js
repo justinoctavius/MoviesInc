@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router';
+import Card from '../Card';
+import MainCard from '../MainCard';
 import MoviesListPage from './page';
 
 const MoviesList = ({ movies, title, main }) => {
@@ -10,10 +12,10 @@ const MoviesList = ({ movies, title, main }) => {
 
   return (
     <MoviesListPage
-      main={main}
       movies={movies}
-      onClick={onClickHandler}
       title={title}
+      onClick={onClickHandler}
+      main={main}
       dataTest="moviesListPage"
     />
   );

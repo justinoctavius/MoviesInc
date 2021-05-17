@@ -43,11 +43,27 @@ describe('Movie api', () => {
   });
 
   describe('getCredits', () => {
-    it('Should return a success msg when getCredits is invoked, passed an in', async () => {
+    it('Should return a success msg when getCredits is invoked, passed an id', async () => {
       const expected = 'success';
       const result = (await movieApi.getCredits(2)).msg;
 
       expect(result).toBe(expected);
+    });
+
+    it('Should return a success msg when getCredits is invoked, not passed an id', async () => {
+      const expected = 'success';
+      const result = (await movieApi.getCredits()).msg;
+
+      expect(result).not.toBe(expected);
+    });
+  });
+
+  describe(`getFavorites`, () => {
+    it(`Should return a unauthorize msg when getFavorites is invoked, passed an incorrect session_id`, async () => {
+      const result = (await movieApi.getFavorites('123')).msg;
+      const noExpected = 'success';
+
+      expect(result).not.toBe(noExpected);
     });
   });
 });

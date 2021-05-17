@@ -1,30 +1,27 @@
 import { theme } from '../../../constants';
+import Block from '../Block';
 import Title from '../Title';
 
 const Actors = ({ actors }) => {
-  console.log(actors);
   return (
     <>
-      <div className="container">
-        <div className="title">
+      <Block>
+        <Block p1>
           <Title>Actors</Title>
-        </div>
-        <div className="actors">
+        </Block>
+        <Block className="actors">
           <ul>
             {actors?.length > 0 &&
               actors?.map((actor) => (
-                <li>
+                <li key={actor?.id}>
                   {actor?.original_name} {' as '} {actor?.character}
                 </li>
               ))}
           </ul>
-        </div>
-      </div>
+        </Block>
+      </Block>
       <style jsx>{`
-        .title {
-          padding: ${theme.paddings.p1};
-        }
-        .actors ul {
+        ul {
           margin: 0 1em;
           list-style: square;
         }

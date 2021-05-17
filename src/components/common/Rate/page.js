@@ -2,13 +2,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import Title from '../Title';
 import { theme } from '../../../constants';
+import Block from '../Block';
 
 const RatePage = ({ rate, setRate }) => {
   return (
     <>
-      <div className={'container'}>
+      <Block m2>
         <Title>Rate</Title>
-        <div className="stars">
+        <Block m1 flex center className="stars">
           {values.map((value) => (
             <strong
               className="star"
@@ -23,17 +24,10 @@ const RatePage = ({ rate, setRate }) => {
               {<FontAwesomeIcon icon={faStar} />}
             </strong>
           ))}
-        </div>
-      </div>
+        </Block>
+      </Block>
       <style jsx>
         {`
-          .container {
-            margin: ${theme.margins.m2};
-          }
-          .stars {
-            text-align: center;
-            margin: ${theme.margins.m1};
-          }
           .star {
             cursor: pointer;
             font-size: ${theme.sizes.title};

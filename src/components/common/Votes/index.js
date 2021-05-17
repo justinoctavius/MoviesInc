@@ -1,23 +1,26 @@
 import { theme } from '../../../constants';
+import Block from '../Block';
 
 const Votes = ({ vote }) => {
   return (
     <>
-      <div className="vote">
+      <Block
+        absolute
+        p1
+        bg="warning"
+        third
+        bottom="0px"
+        style={{ borderRadius: '0 0.5em 0 0' }}
+      >
         <strong>{vote}</strong>
-      </div>
+      </Block>
       <style jsx>
         {`
-          .vote {
-            position: absolute;
-            padding: ${theme.paddings.p1};
-            background-color: ${theme.colors.warning};
-            color: ${theme.colors.third};
+          strong {
             font-size: ${theme.sizes.small};
             font-family: ${theme.fonts.small};
             font-weight: bold;
             border-radius: 0 0.5em 0 0;
-            bottom: 0px;
           }
         `}
       </style>

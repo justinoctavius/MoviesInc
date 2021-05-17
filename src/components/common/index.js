@@ -7,6 +7,8 @@ import MainCard from './MainCard';
 import Votes from './Votes';
 import Actors from './Actors';
 import Image from './Image';
+import Block from './Block';
+import Msg from './Msg';
 
 export {
   Header,
@@ -18,4 +20,6 @@ export {
   Actors,
   Image,
   MoviesList,
+  Block,
+  Msg,
 };

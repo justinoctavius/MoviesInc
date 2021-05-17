@@ -1,7 +1,6 @@
-import { MainMoviesList, MoviesList } from '../../common';
+import { MoviesList } from '../../common';
 
 const HomeScreenPage = ({ nowPlaying, favorites }) => {
-  console.log(favorites);
   return (
     <div>
       <MoviesList
