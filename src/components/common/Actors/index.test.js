@@ -12,7 +12,7 @@ describe('Actors', () => {
   });
   it('Should render all the actors', () => {
     const expected = actors?.length;
-    const result = wrapper.find('.actors ul li').length;
+    const result = wrapper.find('ul li').length;
 
     expect(result).toBe(expected);
   });

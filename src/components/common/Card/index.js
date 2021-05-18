@@ -19,7 +19,9 @@ const Card = ({ movie, empty, onClick }) => {
       onClick={() => onClick(movie.id)}
     >
       {empty ? (
-        <Title>Empty</Title>
+        <Title flex middle center height="100%">
+          Empty
+        </Title>
       ) : (
         <Image src={movie.backdrop_path} key={movie.id} />
       )}

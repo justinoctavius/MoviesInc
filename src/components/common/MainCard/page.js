@@ -20,7 +20,7 @@ const MainCardPage = ({ movie, onClick }) => {
         grid
         rows="1fr 6em"
         pointer
-        s3={`min-width: 35em`}
+        s3={`min-width: 35em;`}
         transition="0.3s"
         hover={hover}
         onClick={onClick}

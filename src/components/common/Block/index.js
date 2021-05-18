@@ -37,14 +37,27 @@ const Block = (props) => {
             color: ${select.color(props)};
 
             padding: ${select.padding(props)};
+            padding-top: ${select.paddingTop(props)};
+            padding-left: ${select.paddingLeft(props)};
+            padding-right: ${select.paddingRight(props)};
+            padding-bottom: ${select.paddingBottom(props)};
+
             margin: ${select.margin(props)};
+            margin-top: ${select.marginTop(props)};
+            margin-left: ${select.marginLeft(props)};
+            margin-right: ${select.marginRight(props)};
+            margin-bottom: ${select.marginBottom(props)};
 
             border: ${select.border(props)};
+            border-top: ${select.borderTop(props)};
+            border-bottom: ${select.borderBottom(props)};
             border-radius: ${select.radius(props)};
 
             cursor: ${select.pointer(props)};
-
             transition: ${props.transition};
+
+            font-size: ${select.fontSize(props)};
+            text-align: ${select.textAlign(props)};
           }
           div:hover {
             ${props.hover}

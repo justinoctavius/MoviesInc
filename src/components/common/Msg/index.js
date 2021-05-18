@@ -1,7 +1,6 @@
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
-import { theme } from '../../../constants';
 import Block from '../Block';
 
 const Msg = ({ text, error }) => {
@@ -27,7 +26,8 @@ const Msg = ({ text, error }) => {
       center
       middle
       zIndex1
-      style={{ display: !show && 'none', fontSize: '1.5em' }}
+      small
+      style={{ display: !show && 'none' }}
     >
       <Block
         pointer

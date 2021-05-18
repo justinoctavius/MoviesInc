@@ -1,17 +1,17 @@
 import { theme } from '../../../constants';
+import Block from '../Block';
 const { colors, sizes, fonts } = theme;
 
-const Title = ({ children, logo, third }) => {
-  const color = [third ? colors.third : colors.secondary];
+const Title = (props) => {
+  const { children, logo } = props;
   return (
     <>
-      <h1>{children}</h1>
+      <Block {...props} title secondary txtCenter>
+        <h1>{children}</h1>
+      </Block>
       <style jsx>{`
         h1 {
-          text-align: center;
-          font-size: ${sizes.title};
           font-family: ${logo ? fonts.logo : fonts.title};
-          color: ${color};
         }
       `}</style>
     </>

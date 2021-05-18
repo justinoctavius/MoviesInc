@@ -1,7 +1,6 @@
-import { render, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import MoviesListPage from './page';
 import MoviesList from './index';
-import MainCard from '../MainCard';
 
 const data = [
   {
