@@ -11,7 +11,7 @@ const DetailsScreen = ({ data, credits, similar }) => {
 
   useEffect(() => {
     getActorsHandler();
-  }, []);
+  }, [credits]);
 
   return (
     <>
